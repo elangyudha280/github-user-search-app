@@ -7,7 +7,7 @@ function App() {
       //   fetch('https://api.github.com/users').then(e=>e.json()).then(e=>{console.log(e)})
       // })
   return (
-    <div className="App relative w-full h-[100vh] dark:bg-github-bg-dark">
+    <div className="App relative font-space-mono grid place-items-center w-full pt-8 h-[100vh] bg-github-bg dark:bg-github-bg-dark">
         <ContainerMain/>
     </div>
   )
