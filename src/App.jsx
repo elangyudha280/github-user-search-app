@@ -1,6 +1,5 @@
 import { useState,useEffect } from 'react'
 import ContainerMain from './component/container'
-import Container from './component/container'
 
 function App() {
       // useEffect(()=>{
