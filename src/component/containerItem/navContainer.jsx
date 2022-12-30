@@ -45,7 +45,7 @@ const NavContainer = ()=>{
         }
     }
     return(
-        <nav className="nav-container border-2 border-red-600 relative w-full h-[50px] grid grid-cols-[1fr_auto] grid-rows-[auto] ">
+        <nav className="nav-container  relative w-full h-[50px] grid grid-cols-[1fr_auto] grid-rows-[auto] ">
             <h2 className="nav-title font-semibold text-2xl flex-1 text-slate-900 dark:text-white self-center">devfinder</h2>
             <button className="btn-toggle  w-[100px] flex justify-center items-center gap-x-2" onClick={eventToggle}>
                 <span ref={spanMode} className="text-lg font-semibold uppercase text-github-text-alt dark:text-white tracking-widest" ></span>
