@@ -1,3 +1,4 @@
+import BioUser from "./containerItem/bioUser";
 import NavContainer from "./containerItem/navContainer";
 
 
@@ -34,6 +35,9 @@ const ContainerMain = ()=>{
              
             </section>
             </form>
+
+            {/* component bio user */}
+            <BioUser/>
         </section>
     )
 }
