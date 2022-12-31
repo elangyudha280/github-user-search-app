@@ -21,7 +21,11 @@ module.exports = {
   'github-btn-hover': '#60abff',
   'github-bg-dark':'#141C30',
   'github-bg-content-dark':'#1F2A48',
-  'github-place-holder':'#49536C'
+  'github-place-holder':'#49536C',
+  'github-marker':'rgb(249, 102, 238)'
+      },
+      screens:{
+        'xs':'500px'
       }
     },
   },

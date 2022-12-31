@@ -7,13 +7,13 @@ import NavContainer from "./containerItem/navContainer";
 // component container 
 const ContainerMain = ()=>{
     return (
-        <section className="Container relative w-full md:w-[700px] ">
+        <section className="Container relative w-full md:w-[750px] ">
             {/* component container nav */}
             <NavContainer/>
 
             {/* component input search  */}
             <form action="">
-            <section className="container-input-search mt-5 py-2 pr-2 relative w-full h-[60px] bg-github-bg-content dark:bg-github-bg-content-dark rounded-lg shadow-[0_5px_10px_-5px_rgba(0,0,0,0.3)] grid grid-cols-[auto_1fr_auto_auto] grid-rows-1 overflow-hidden ">
+            <section className="container-input-search mt-5 py-2 pr-2 relative w-full h-[60px] bg-github-bg-content dark:bg-github-bg-content-dark rounded-lg shadow-[0_4px_15px_-5px_rgba(0,0,0,0.3)] grid grid-cols-[auto_1fr_auto_auto] grid-rows-1 overflow-hidden ">
 
              
                     {/* icon search  */}
