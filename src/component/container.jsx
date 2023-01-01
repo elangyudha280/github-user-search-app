@@ -11,6 +11,23 @@ import NavContainer from "./containerItem/navContainer";
 
 // component container 
 const ContainerMain = ()=>{
+
+    let [dataUser,setDataUser] = useState([])
+
+
+    // useEffect for get data
+    useEffect(()=>{
+        fetch('https://api.github.com/users/octocat').then(e => e.json())
+        .then(datas =>{
+            setDataUser(datas)
+        })
+        .catch(e => e)
+    },[])
+
+    useEffect(()=>{
+        console.log(dataUser)
+    },[dataUser])
+
     return (
         <section className="Container relative w-full md:w-[750px] ">
             {/* component container nav */}
@@ -42,7 +59,9 @@ const ContainerMain = ()=>{
             </form>
 
             {/* component bio user */}
-            <BioUser/>
+           {
+             <BioUser username={dataUser.name} nickname={dataUser.login} imgProfile={dataUser.avatar_url} dateJoin={dataUser.created_at} bio={dataUser.bio} repo={dataUser.public_repos} followers={dataUser.followers} location={dataUser.location} following={dataUser.following} twitter={dataUser.twitter_username} blog={dataUser.blog} company={dataUser.company}/> 
+           }
         </section>
     )
 }
