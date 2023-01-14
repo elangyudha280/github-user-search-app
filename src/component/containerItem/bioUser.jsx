@@ -54,7 +54,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                             <img src="./images/icon-location.svg" className="w-[18px]" alt="icon location" />
                             { 
                               (location === null) ?
-                                <p className="text-location flex-1 pl-1 text-github-shadow-inactive dark:text-white truncate">
+                                <p className="text-location flex-1 pl-1 text-github-shadow-inactive text-slate-400 dark:text-white truncate">
                                  No Location
                                 </p>
                                 :
@@ -69,7 +69,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                                 (blog === null || blog === '') 
                                 ?
                                 (
-                                    <p className="text-website flex-1 text-github-shadow-inactive dark:text-white truncate ">
+                                    <p className="text-website text-slate-400 flex-1 text-github-shadow-inactive dark:text-white truncate ">
                                     Not Available
                                     </p>
                                 ) 
@@ -87,7 +87,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                                 (twitter === null) 
                                 ?
                                 (
-                                    <p className="text-twitter flex-1 text-github-shadow-inactive dark:text-white  truncate ">
+                                    <p className="text-twitter text-slate-400 flex-1 text-github-shadow-inactive dark:text-white  truncate ">
                                     Not Available
                                     </p>
                                 ) 
@@ -106,7 +106,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                                 (company === null) 
                                 ?
                                 (
-                                    <p className="text-twitter flex-1 text-github-shadow-inactive dark:text-white  truncate ">
+                                    <p className="text-twitter flex-1 text-slate-400 text-github-shadow-inactive dark:text-white  truncate ">
                                      Not Available
                                     </p>
                                 ) 
