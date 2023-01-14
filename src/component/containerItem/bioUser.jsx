@@ -1,9 +1,11 @@
 
-
 const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,followers,following,location,twitter,blog,company}) => {
     
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     let dateTostring = new Date(dateJoin).toLocaleDateString('en-US',options);
+
+
+  
     
     return (
         <section className="container-bio-user relative w-full mt-5 bg-github-bg-content dark:bg-github-bg-content-dark rounded-lg px-5 py-9  shadow-[0_4px_13px_-2px_rgba(0,0,0,0.3)]">
@@ -64,7 +66,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                         <div className="link-personal-website relative w-full  flex gap-x-2">
                         <img src="./images/icon-website.svg" className="" alt="icon website" />
                             {
-                                (blog === null) 
+                                (blog === null || blog === '') 
                                 ?
                                 (
                                     <p className="text-website flex-1 text-github-shadow-inactive dark:text-white truncate ">

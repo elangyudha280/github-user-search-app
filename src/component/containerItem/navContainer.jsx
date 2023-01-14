@@ -13,8 +13,12 @@ const NavContainer = ()=>{
 
 
     useEffect(()=>{
+        // set state html untuk menyimpan element html
         setHtml(document.querySelector('html'))
+
+        // check apakah localStorage itemnya ada atau tidak
         if(localStorage.getItem('mode')){
+            // set class html dengan nilai dari locaStorage item
             document.querySelector('html').classList.add(localStorage.getItem('mode'))
             spanMode.current.textContent = localStorage.getItem('spanMode');
             imgToggle.current.src = localStorage.getItem('imgMode');
@@ -24,10 +28,11 @@ const NavContainer = ()=>{
             spanMode.current.textContent = 'dark'
             imgToggle.current.src = './images/icon-moon.svg';
         }
-       
     },[])
 
+    // event dark and light mode
     const eventToggle = ()=>{
+        // check apakah ada class light di tag  htmlnya
         if(html.classList.contains('light')){
             localStorage.setItem('mode','dark');
             localStorage.setItem('spanMode','light');

@@ -4,6 +4,7 @@ import {useState,useEffect,useRef} from 'react';
 
 import BioUser from "./containerItem/bioUser";
 import NavContainer from "./containerItem/navContainer";
+import Loading from './loading';
 
 
 
@@ -14,9 +15,7 @@ const ContainerMain = ()=>{
 
     let [dataUser,setDataUser] = useState([])
 
-    let [valueInput,setValueInput] = useState('')
-
-    let [notFound,setNotFound] = useState(false)
+    let [loading,setLoading] = useState(true)
 
     // USEREF FOR INPUT
     let inputSearch = useRef()
@@ -31,11 +30,13 @@ const ContainerMain = ()=>{
             setDataUser(datas)
         })
         .catch(e => e)
+        .finally(()=>{setLoading(false)})
     },[])
 
     
     const searchUser = (e)=>{
         e.preventDefault()
+        setLoading(true)
         fetch(`https://api.github.com/users/${inputSearch.current.value}`).then(e => {
             return e.json()
         })
@@ -43,7 +44,7 @@ const ContainerMain = ()=>{
             setDataUser(datas)
         })
         .catch(e => e)
-
+        .finally(()=>{setLoading(false)})
     }
 
     return (
@@ -77,7 +78,14 @@ const ContainerMain = ()=>{
             </form>
 
             {/* component bio user */}
+            
            {
+
+            // check apakah sedang loading
+            (loading) ? <Loading/> :
+            // check apakah user yang di cari ada
+            (dataUser.message) ? <p className='not-found  w-full py-4 rounded-md bg-github-bg-content dark:bg-github-bg-content-dark text-center font-600 text-github-text-alt dark:text-white mt-3'>{dataUser.message}</p>
+             : 
                 <BioUser username={dataUser.name} nickname={dataUser.login} imgProfile={dataUser.avatar_url} dateJoin={dataUser.created_at} bio={dataUser.bio} repo={dataUser.public_repos} followers={dataUser.followers} location={dataUser.location} following={dataUser.following} twitter={dataUser.twitter_username} blog={dataUser.blog} company={dataUser.company}/> 
            }
         </section>
