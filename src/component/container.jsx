@@ -44,7 +44,10 @@ const ContainerMain = ()=>{
             setDataUser(datas)
         })
         .catch(e => e)
-        .finally(()=>{setLoading(false)})
+        .finally(()=>{
+            inputSearch.current.value =''
+            setLoading(false)
+        })
     }
 
     return (

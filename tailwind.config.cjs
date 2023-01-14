@@ -25,7 +25,7 @@ module.exports = {
   'github-marker':'rgb(249, 102, 238)'
       },
       screens:{
-        'xs':'500px'
+        'xs':'520px'
       }
     },
   },
