@@ -1,6 +1,10 @@
 
 
 const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,followers,following,location,twitter,blog,company}) => {
+    
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    let dateTostring = new Date(dateJoin).toLocaleDateString('en-US',options);
+    
     return (
         <section className="container-bio-user relative w-full mt-5 bg-github-bg-content dark:bg-github-bg-content-dark rounded-lg px-5 py-9  shadow-[0_4px_13px_-2px_rgba(0,0,0,0.3)]">
 
@@ -11,7 +15,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                 </div>
                 <div className="description-header-bio relative w-full h-full  overflow-x-hidden overflow-y-auto  pt-2 py-1 px-3 text-center xs:text-left  ">
                     <h2 className="username-github text-github-bg-dark dark:text-white font-semibold text-[1.9em] ">{username}</h2>
-                    <p className="date-join text-github-text dark:text-white  capitalize ">Joined <span className="sub-date">{dateJoin}</span></p>
+                    <p className="date-join text-github-text dark:text-white  capitalize "><span className="sub-date">{dateTostring}</span></p>
                     <a href="#"className="link-username text-github-btn font-[500]">@{nickname}</a>
                     <p className="bio-description text-github-text    dark:text-white mt-3 truncate ">
                     {

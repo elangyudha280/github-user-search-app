@@ -14,19 +14,37 @@ const ContainerMain = ()=>{
 
     let [dataUser,setDataUser] = useState([])
 
+    let [valueInput,setValueInput] = useState('')
+
+    let [notFound,setNotFound] = useState(false)
+
+    // USEREF FOR INPUT
+    let inputSearch = useRef()
+
 
     // useEffect for get data
     useEffect(()=>{
-        fetch('https://api.github.com/users/octocat').then(e => e.json())
+        fetch('https://api.github.com/users/octocat').then(e => {
+            return e.json()
+        })
         .then(datas =>{
             setDataUser(datas)
         })
         .catch(e => e)
     },[])
 
-    useEffect(()=>{
-        console.log(dataUser)
-    },[dataUser])
+    
+    const searchUser = (e)=>{
+        e.preventDefault()
+        fetch(`https://api.github.com/users/${inputSearch.current.value}`).then(e => {
+            return e.json()
+        })
+        .then(datas =>{
+            setDataUser(datas)
+        })
+        .catch(e => e)
+
+    }
 
     return (
         <section className="Container relative w-full md:w-[750px] ">
@@ -34,7 +52,7 @@ const ContainerMain = ()=>{
             <NavContainer/>
 
             {/* component input search  */}
-            <form action="">
+            <form action="" onSubmit={searchUser}>
             <section className="container-input-search mt-5 py-2 pr-2 relative w-full h-[60px] bg-github-bg-content dark:bg-github-bg-content-dark rounded-lg shadow-[0_4px_15px_-5px_rgba(0,0,0,0.3)] grid grid-cols-[auto_1fr_auto_auto] grid-rows-1 overflow-hidden ">
 
              
@@ -44,7 +62,7 @@ const ContainerMain = ()=>{
                  </div>  
                 
                 {/* input search */}
-                <input type="text" className="input-search w-full h-full text-github-text-alt dark:text-white font-[500] outline-none rounded-md bg-transparent" placeholder="Search Github username..." />
+                <input type="text" className="input-search w-full h-full text-github-text-alt dark:text-white font-[500] outline-none rounded-md bg-transparent" placeholder="Search Github username..." ref={inputSearch} />
 
                 {/* alert not found */}
 
@@ -60,7 +78,7 @@ const ContainerMain = ()=>{
 
             {/* component bio user */}
            {
-             <BioUser username={dataUser.name} nickname={dataUser.login} imgProfile={dataUser.avatar_url} dateJoin={dataUser.created_at} bio={dataUser.bio} repo={dataUser.public_repos} followers={dataUser.followers} location={dataUser.location} following={dataUser.following} twitter={dataUser.twitter_username} blog={dataUser.blog} company={dataUser.company}/> 
+                <BioUser username={dataUser.name} nickname={dataUser.login} imgProfile={dataUser.avatar_url} dateJoin={dataUser.created_at} bio={dataUser.bio} repo={dataUser.public_repos} followers={dataUser.followers} location={dataUser.location} following={dataUser.following} twitter={dataUser.twitter_username} blog={dataUser.blog} company={dataUser.company}/> 
            }
         </section>
     )
