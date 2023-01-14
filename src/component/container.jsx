@@ -89,7 +89,7 @@ const ContainerMain = ()=>{
             // check apakah user yang di cari ada
             (dataUser.message) ? <p className='not-found  w-full py-4 rounded-md bg-github-bg-content dark:bg-github-bg-content-dark text-center font-600 text-github-text-alt dark:text-white mt-3'>{dataUser.message}</p>
              : 
-                <BioUser username={dataUser.name} nickname={dataUser.login} imgProfile={dataUser.avatar_url} dateJoin={dataUser.created_at} bio={dataUser.bio} repo={dataUser.public_repos} followers={dataUser.followers} location={dataUser.location} following={dataUser.following} twitter={dataUser.twitter_username} blog={dataUser.blog} company={dataUser.company}/> 
+                <BioUser username={dataUser.name} nickname={dataUser.login} imgProfile={dataUser.avatar_url} dateJoin={dataUser.created_at} bio={dataUser.bio} urlProfile={dataUser.html_url} repo={dataUser.public_repos} followers={dataUser.followers} location={dataUser.location} following={dataUser.following} twitter={dataUser.twitter_username} blog={dataUser.blog} company={dataUser.company}/> 
            }
         </section>
     )
