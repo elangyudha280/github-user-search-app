@@ -93,7 +93,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                                 ) 
                                 :
                                 (
-                                    <a href="#" className="text-twitter flex-1 text-github-text-alt dark:text-white truncate hover:underline">
+                                    <a href={twitter} className="text-twitter flex-1 text-github-text-alt dark:text-white truncate hover:underline">
                                         {twitter}
                                     </a>
                                 )
@@ -112,9 +112,9 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                                 ) 
                                 :
                                 (
-                                    <a href="#" className="text-twitter flex-1 text-github-text-alt dark:text-white  truncate hover:underline max-[400px]:whitespace-normal ">
+                                    <p className="text-twitter flex-1 text-github-text-alt dark:text-white  truncate hover:underline max-[400px]:whitespace-normal ">
                                    {company}
-                                     </a>
+                                     </p>
                                 )
                             }
                         </div>
