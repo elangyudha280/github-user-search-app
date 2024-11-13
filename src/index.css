@@ -82,7 +82,7 @@
 
 @media (min-width:500px) and (max-height:615px){
     .App{
-        height:auto;
+/*         height:auto; */
         padding-bottom:2em;
     }
 }
