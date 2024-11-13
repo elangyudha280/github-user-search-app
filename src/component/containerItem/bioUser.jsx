@@ -76,7 +76,7 @@ const BioUser = ({username,nickname,imgProfile,urlProfile,dateJoin,bio,repo,foll
                                 :
                                 (
                                     <a href={blog} className="text-website  max-w-[200px] min-[400px]flex-1 text-github-text-alt dark:text-white truncate hover:underline">
-                                        {}
+                                        {blog}
                                     </a>
                                 )
                             }
